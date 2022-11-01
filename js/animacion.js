@@ -33,33 +33,39 @@
 
 
 let aleatorio = 1 + (parseInt(Math.random() * 2))
-let btn =document.getElementById("btn")
+let btn = document.getElementById("btn")
 
 
-function carasello(){
+function carasello() {
 
-   
+
     let carasello = document.getElementById("carasello").value
-    let apuesta = document.getElementById("apostar").value
-    
-do {
+    let apuesta = parseInt(document.getElementById("apostar").value)
+    let suma = 0
+
+    do {
 
 
-    
-    let  = apuesta
-    
-    if(carasello == aleatorio){
-
-        alert(`ganaste la suma de: ${suma}`)
-
-    }else{
-        alert(`perdiste`)
-    }
-  
-    
 
 
-} while (i < 5);
+        if (carasello == aleatorio) {
+
+
+            suma = apuesta + apuesta
+
+            alert(`ganaste la suma de: ${suma}`)
+
+        } else {
+
+            
+
+            alert(`perdiste`)
+        }
+
+
+
+
+    } while (i < 5);
 
 
 }
