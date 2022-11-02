@@ -41,7 +41,9 @@ function carasello() {
 
     let carasello = document.getElementById("carasello").value
     let apuesta = parseInt(document.getElementById("apostar").value)
-    let suma = 0
+    let mony = 0
+    let cont = 0, 
+        estado = true
 
     do {
 
@@ -51,21 +53,21 @@ function carasello() {
         if (carasello == aleatorio) {
 
 
-            suma = apuesta + apuesta
-
-            alert(`ganaste la suma de: ${suma}`)
+            mony = apuesta + apuesta
+            cont = cont + 1
+            alert(`ganaste la suma de: ${mony} jugaste ${cont}`)
 
         } else {
 
-            
+            mony = mony - apuesta
 
             alert(`perdiste`)
         }
 
 
+        estado = confirm(`Desea seguir jugando?`)
 
-
-    } while (i < 5);
+    } while (estado != false);
 
 
 }
