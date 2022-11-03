@@ -41,7 +41,7 @@ let mony = 0,
 
 function carasello() {
 
-    let apuesta = parseInt(document.getElementById("apostar").value)
+    let apuesta = document.getElementById("apostar").value
     let carasello = document.getElementById("carasello").value
     let res = document.getElementById("res")
 
@@ -51,10 +51,12 @@ function carasello() {
         alert(`debes apostar gallina`)
     }
 
+    apuesta = parseInt(apuesta)
+
     while (apuesta > 1 && estado != false) {
 
         let aleatorio = 1 + (parseInt(Math.random() * 2))
-        console.log(aleatorio)
+       
 
         if (carasello == aleatorio) {
 
