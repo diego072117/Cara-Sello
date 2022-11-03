@@ -108,8 +108,8 @@ section{
 }
 
 .home-about .image img{
-   width: 70%;
-   margin-left: 12%;
+   width: 100%;
+   margin-left: -5%;
 }
 
 .home-about .content{
@@ -135,7 +135,7 @@ section{
 
 
 .footer{
-   margin-top: 30em;
+   margin-top: 32em;
    background: url(../images/footer-bg.jpg) no-repeat;
    background-size: cover;
    background-position: center;
@@ -245,9 +245,11 @@ section{
 
 }
 
-.form button {
+
+.form .button {
    cursor: pointer;
    border: none;
+   text-align: center;
    width: 80%;
    background: #263481;
    padding: 10px 20px;
@@ -310,7 +312,13 @@ section{
    text-shadow: 4px 4px 7px grey;
 }
 
+/*-----------------------------js style--------------------------------*/
 
+.resultado{
+   font-size: 35px;
+   text-align: center;
+   justify-content: center;
+}
 
 /* media queries  */
 
@@ -362,21 +370,15 @@ section{
       margin-left: 25%;
       width: 50%;
       height: 500px;
-      margin-top: -5%;
+      margin-top: 12%;
    }
 
-   .contenidoModal{
-      width: 50%;
+   .container{
+      margin-top: 13%;
+      margin-left: 40%;
    }
 
-   .contenidoModal h2{
-      margin-left: 10%;
-   }
 
-   .contenidoModal p{
-      font-size: 15px;
-   }
-   
 }
 
 @media (max-width:768px){
@@ -418,19 +420,12 @@ section{
       margin-left: 15%;
       width: 70%;
       height: 500px;
-      margin-top: -8%;
+      margin-top: 15%;
    }
 
-   .contenidoModal{
-      width: 70%;
-   }
-
-   .contenidoModal h2{
-      margin-left: 10%;
-   }
-
-   .contenidoModal p{
-      font-size: 15px;
+   .container{
+      margin-top: 13%;
+      margin-left: 34%;
    }
 
 }
@@ -444,25 +439,22 @@ section{
    .container-ejercicios {
       margin-left: 16%;
       width: 70%;
-      margin-top: -8%;
+      margin-top: 15%;
    }
 
    .heading-title{
       font-size: 3rem;
    }
 
-   .contenidoModal{
-      width: 90%;
+   .container{
+      margin-top: 13%;
    }
 
-   .contenidoModal h2{
-      margin-left: 10%;
+   .resultado{
+      font-size: 25px;
    }
 
-   .contenidoModal p{
-      font-size: 15px;
-   }
-
+ 
 
 
 }

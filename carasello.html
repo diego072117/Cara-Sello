@@ -27,7 +27,7 @@
 
 
       <nav class="navbar">
-         
+
          <a href="index.html">home</a>
          <a href="carasello.html">cara serllo</a>
 
@@ -38,12 +38,12 @@
    </section>
    <div class="container">
       <div class="w-100 contenedor-list">
-          <ul>
-              <li><img src="/images/CARA-modified.png" alt=""></li>
-              <li><img src="/images/CRUZ-modified.png" alt=""></li>
-          </ul>
+         <ul>
+            <li><img src="/images/CARA-modified.png" alt=""></li>
+            <li><img src="/images/CRUZ-modified.png" alt=""></li>
+         </ul>
       </div>
-  </div>
+   </div>
 
    <section class="services">
 
@@ -51,39 +51,45 @@
 
    </section>
 
-   <div class="container-ejercicios">
+   <form>
 
-      <div class="form-data">
-         <div class="form" action="#">
+      <div class="container-ejercicios">
 
-            <label for="">Cuanto decea apostar</label>
-            <div class="box-input">
+         <div class="form-data">
+            <div class="form">
 
-               <input id="apostar" type="number" placeholder="Digite la cantidad a apostar"><br>
 
+
+
+               <label for="">Cuanto decea apostar</label>
+               <div class="box-input">
+
+                  <input id="apostar" type="number" placeholder="Digite la cantidad a apostar"><br>
+
+               </div>
+
+
+
+               <label for=""></label>
+               <select class="select" name="" id="carasello">
+
+                  <option selected>Seleccione cara o sello</option>
+                  <option value="1">Cara</option>
+                  <option value="2">Cruz</option>
+
+
+               </select>
+
+               <input type="button" class="button" value="Jugar" id="btn">
+               <input value="Terminar Juego" class="button" id="btn-salir" type="reset">
             </div>
-
-          
-
-            <label for="">Lado</label>
-            <select class="select" name="" id="carasello">
-
-               <option selected>Seleccione cara o sello</option>
-               <option value="1">Cara</option>
-               <option value="2">Cruz</option>
-       
-   
-            </select>
-
-     
-
-
-            <button id="btn">Jugar</button>
          </div>
+
       </div>
-   </div>
+      <div id="res">
 
-
+      </div>
+   </form>
 
 
    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

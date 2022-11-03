@@ -1,78 +1,97 @@
 
 
-// const ul = document.querySelector("ul");
+const ul = document.querySelector("ul");
 
-// function frames(){
-//     const animacion = ul.animate([
-//         //Keyframes
-//         {transform: "TranslateY(0px)"},
-//         {transform: "TranslateY(-100px)"}
-//     ],{
-//         //options
-//         easing: "linear",
-//         iterations: 0.1,
-//         duration: 200 //milisegundos
-//     });
+function frames(){
+    const animacion = ul.animate([
+        //Keyframes
+        {transform: "TranslateY(0px)"},
+        {transform: "TranslateY(-100px)"}
+    ],{
+        //options
+        easing: "linear",
+        iterations: 0.1,
+        duration: 200 //milisegundos
+    });
 
-//     return animacion.finished;
-// }
+    return animacion.finished;
+}
 
-// function displace(){
-//     frames()
-//     .then((res)=>{
-//         console.log(res);
-//         ul.appendChild(document.querySelectorAll("ul > li")[0])
-//     })
-// }
+function displace(){
+    frames()
+    .then((res)=>{
+        console.log(res);
+        ul.appendChild(document.querySelectorAll("ul > li")[0])
+    })
+}
 
-// setInterval(()=>{
-//     displace();
-// }, 1000)
-
-
+setInterval(()=>{
+    displace();
+}, 1000)
 
 
-let aleatorio = 1 + (parseInt(Math.random() * 2))
+
+
+
 let btn = document.getElementById("btn")
+
+let mony = 0,
+    cont = 0
 
 
 function carasello() {
 
-
-    let carasello = document.getElementById("carasello").value
     let apuesta = parseInt(document.getElementById("apostar").value)
-    let mony = 0
-    let cont = 0, 
-        estado = true
+    let carasello = document.getElementById("carasello").value
+    let res = document.getElementById("res")
 
-    do {
+    let estado = true
 
+    if (apuesta < 1) {
+        alert(`debes apostar gallina`)
+    }
 
+    while (apuesta > 1 && estado != false) {
 
+        let aleatorio = 1 + (parseInt(Math.random() * 2))
+        console.log(aleatorio)
 
         if (carasello == aleatorio) {
 
-
-            mony = apuesta + apuesta
+            mony = mony + apuesta
+            console.log(mony)
             cont = cont + 1
-            alert(`ganaste la suma de: ${mony} jugaste ${cont}`)
 
+            res.innerHTML = `<p class="resultado">ganaste, monto actual: $${mony} <p class="resultado">jugaste ${cont} veces</p>`
+            
         } else {
 
             mony = mony - apuesta
+            console.log(mony)
+            cont = cont + 1
 
-            alert(`perdiste`)
+            res.innerHTML = `<p class="resultado">perdiste, monto actual: $${mony} <p class="resultado">jugaste ${cont} veces</p>`
         }
 
 
-        estado = confirm(`Desea seguir jugando?`)
+        estado = false
 
-    } while (estado != false);
-
+    };
 
 }
 
-console.log(aleatorio)
+
 
 btn.addEventListener('click', carasello)
 
+let btnsalir = document.getElementById("btn-salir")
+
+function terminar(){
+
+    mony = 0
+    cont = 0
+
+    res.innerHTML = ``
+
+}
+btnsalir.addEventListener('click', terminar)
