@@ -48,12 +48,17 @@ function carasello() {
     let estado = true
 
     if (apuesta < 1) {
-        alert(`debes apostar gallina`)
+        Swal.fire(`debes apostar gallina`)
     }
+
+    if (carasello == 0) {
+        Swal.fire(`debes elegir una opcion`)
+    }
+
 
     apuesta = parseInt(apuesta)
 
-    while (apuesta > 1 && estado != false) {
+    while (apuesta > 1 && estado != false && carasello != 0) {
 
         let aleatorio = 1 + (parseInt(Math.random() * 2))
        
@@ -64,7 +69,7 @@ function carasello() {
             console.log(mony)
             cont = cont + 1
 
-            res.innerHTML = `<p class="resultado">ganaste, monto actual: $${mony} <p class="resultado">jugaste ${cont} veces</p>`
+            res.innerHTML = `<p class="ganaste resultado">Ganaste</p><p class="resultado"> monto actual: $${mony} <p class="resultado">jugaste ${cont} veces</p>`
             
         } else {
 
@@ -72,7 +77,7 @@ function carasello() {
             console.log(mony)
             cont = cont + 1
 
-            res.innerHTML = `<p class="resultado">perdiste, monto actual: $${mony} <p class="resultado">jugaste ${cont} veces</p>`
+            res.innerHTML = `<p class="perdiste resultado">Perdiste</p><p class="resultado"> monto actual: $${mony} <p class="resultado">jugaste ${cont} veces</p>`
         }
 
 
